@@ -51,7 +51,7 @@
 - [x] 📄 `evidence/02_ab_routing_log.txt`
 
 ## Checkpoint 3 — RAGAS (25đ) · `src/03_ragas_evaluation.py` ⏱ 15–30 phút, bắt đầu sớm
-- [ ] Copy `SYSTEM_V1`/`SYSTEM_V2` **giống hệt** bước 2 (~l.40–42, 49–52), **bắt buộc có `{context}`**, không thì faithfulness rất thấp
+- [x] Copy `SYSTEM_V1`/`SYSTEM_V2` **giống hệt** bước 2 (~l.40–42, 49–52), **bắt buộc có `{context}`**, không thì faithfulness rất thấp
 - [ ] `run_rag()` (~l.77–94): `contexts` là `list[str]` (**không ghép chuỗi**), `ctx_str` chỉ để đưa vào prompt; trả `{answer, contexts}`
 - [ ] `collect_rag_outputs()` (~l.110–119): dùng `qa["question"]`, lấy `answer` và `contexts`
 - [ ] `build_ragas_dataset()` (~l.137–148): `SingleTurnSample(user_input, response, retrieved_contexts, reference)` → `EvaluationDataset`
