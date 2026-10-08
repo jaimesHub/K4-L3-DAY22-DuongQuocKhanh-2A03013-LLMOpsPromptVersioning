@@ -142,21 +142,20 @@ class JSONFormatter(Validator):
 
         ⚠️ Với OnFailAction.FIX, chỉ FailResult.fix_value mới thay được output.
         """
-        # TODO: Thử parse JSON trực tiếp
+        # Thử parse JSON trực tiếp
         try:
-            ...   # json.loads(value)
-            # TODO: JSON hợp lệ sẵn → trả về PassResult()
-            return ...
+            json.loads(value)
+            # JSON hợp lệ sẵn
+            return PassResult()
         except json.JSONDecodeError:
             pass
 
-        # TODO: Thử sửa JSON rồi parse lại
+        # Thử sửa JSON rồi parse lại
         try:
             repaired_text = self._repair(value)
-            parsed        = ...   # json.loads(repaired_text)
+            parsed        = json.loads(repaired_text)
             print(f"  🔧 JSON đã được sửa thành công")
-            # TODO: Trả về FailResult(error_message="JSON lỗi, đã tự sửa", fix_value=json.dumps(parsed, indent=2))
-            return ...
+            return FailResult(error_message="JSON lỗi, đã tự sửa", fix_value=json.dumps(parsed, indent=2))
         except json.JSONDecodeError:
             # Không sửa được → trả về JSON dự phòng để output vẫn là JSON hợp lệ
             fallback = json.dumps({"error": "Không thể phân tích JSON", "raw": value[:200]}, ensure_ascii=False)
