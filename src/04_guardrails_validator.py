@@ -194,9 +194,8 @@ def demo_json_guard():
     print("  Demo: JSON Formatting & Repair")
     print("=" * 55)
 
-    # TODO: Tạo Guard với JSONFormatter, truyền on_fail=OnFailAction.FIX vào CONSTRUCTOR
-    # Gợi ý: guard = Guard().use(JSONFormatter(on_fail=OnFailAction.FIX))
-    guard = Guard().use(JSONFormatter(...))
+    # on_fail truyền vào CONSTRUCTOR của validator, không phải Guard.use()
+    guard = Guard().use(JSONFormatter(on_fail=OnFailAction.FIX))
 
     test_cases = [
         ("Valid JSON",       '{"name": "Alice", "age": 30}'),
