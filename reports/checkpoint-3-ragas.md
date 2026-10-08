@@ -107,15 +107,14 @@ def run_ragas_eval(dataset):
         ContextPrecision()
     ]
     
-    evaluator_llm = ChatAnthropic(model_name="claude-3-5-sonnet-20241022", 
-                                  api_key=config.ANTHROPIC_API_KEY)
-    evaluator_emb = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
+    llm_eval = get_llm(temperature=0)
+    emb_eval = get_embeddings()
     
     result = evaluate(
         dataset,
         metrics=metrics,
-        llm=evaluator_llm,
-        embeddings=evaluator_emb
+        llm=llm_eval,
+        embeddings=emb_eval
     )
     
     return result
