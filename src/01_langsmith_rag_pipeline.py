@@ -74,15 +74,13 @@ def build_rag_chain(vectorstore):
 
 
 # ── 4. Hàm Query có LangSmith Tracing ─────────────────────────────────────
-# TODO: Thêm decorator @traceable(name="rag-query", tags=["rag", "step1"])
-#       phía TRÊN chữ ký hàm để LangSmith tự động ghi lại input/output/latency
+@traceable(name="rag-query", tags=["rag", "step1"])
 def ask(chain, question: str) -> str:
     """
     Chạy RAG chain với một câu hỏi.
     Decorator @traceable sẽ gửi mỗi lần gọi lên LangSmith như một trace riêng.
     """
-    # TODO: Gọi chain.invoke(question) và trả về kết quả
-    ...
+    return chain.invoke(question)
 
 
 # ── 5. Main ────────────────────────────────────────────────────────────────
