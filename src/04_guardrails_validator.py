@@ -75,23 +75,20 @@ class PIIDetector(Validator):
         redacted_text = value
         found_pii     = []
 
-        # TODO: Lặp qua self.PII_PATTERNS.items()
         for pii_type, pattern in self.PII_PATTERNS.items():
-            # TODO: Tìm tất cả matches
-            matches = ...   # re.findall(pattern, value)
+            # Các pattern chỉ dùng nhóm không bắt (?:...) nên findall trả về chuỗi đầy đủ
+            matches = re.findall(pattern, value)
 
             for match in matches:
-                # TODO: Thay thế match bằng "[PII_TYPE_REDACTED]" trong redacted_text
-                redacted_text = ...   # redacted_text.replace(match, f"[{pii_type}_REDACTED]")
+                redacted_text = redacted_text.replace(match, f"[{pii_type}_REDACTED]")
                 found_pii.append((pii_type, match))
 
         if found_pii:
             print(f"  ⚠️  Đã redact {len(found_pii)} PII: {[p[0] for p in found_pii]}")
-            # TODO: Trả về FailResult(error_message="Phát hiện PII", fix_value=redacted_text)
-            return ...
+            return FailResult(error_message="Phát hiện PII", fix_value=redacted_text)
 
-        # TODO: Không có PII → trả về PassResult() (giữ nguyên value)
-        return ...
+        # Không có PII → giữ nguyên value
+        return PassResult()
 
 
 # ── 2. JSON Formatter Validator ────────────────────────────────────────────
