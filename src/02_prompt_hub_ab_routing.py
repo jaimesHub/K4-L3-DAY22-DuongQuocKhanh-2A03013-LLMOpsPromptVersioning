@@ -80,23 +80,19 @@ def pull_prompts_from_hub(client: Client) -> dict:
     Tải 2 prompt từ LangSmith Prompt Hub.
     Fallback về template local nếu Hub không khả dụng.
 
-    Gợi ý: client.pull_prompt(name) → ChatPromptTemplate
-
     Trả về: {name: ChatPromptTemplate}
     """
     prompts = {}
 
-    # TODO: Pull PROMPT_V1_NAME, fallback về PROMPT_V1 nếu lỗi
     try:
-        prompts[PROMPT_V1_NAME] = ...   # client.pull_prompt(PROMPT_V1_NAME)
+        prompts[PROMPT_V1_NAME] = client.pull_prompt(PROMPT_V1_NAME)
         print(f"↓ Đã pull '{PROMPT_V1_NAME}' từ Hub")
     except Exception:
         prompts[PROMPT_V1_NAME] = PROMPT_V1
         print(f"ℹ️  Dùng local fallback cho '{PROMPT_V1_NAME}'")
 
-    # TODO: Pull PROMPT_V2_NAME, fallback về PROMPT_V2 nếu lỗi
     try:
-        prompts[PROMPT_V2_NAME] = ...   # client.pull_prompt(PROMPT_V2_NAME)
+        prompts[PROMPT_V2_NAME] = client.pull_prompt(PROMPT_V2_NAME)
         print(f"↓ Đã pull '{PROMPT_V2_NAME}' từ Hub")
     except Exception:
         prompts[PROMPT_V2_NAME] = PROMPT_V2
