@@ -57,13 +57,13 @@
 - [x] `build_ragas_dataset()` (~l.137–148): `SingleTurnSample(user_input, response, retrieved_contexts, reference)` → `EvaluationDataset`
 - [x] `run_ragas_eval()` (~l.161–181): `evaluate(dataset, metrics=[4 chỉ số], llm=llm_eval, embeddings=emb_eval)`
 - [x] `main()` (~l.208–245): `setup_vectorstore()`, ghi `data/ragas_report.json`
-- [ ] Chạy `python 03_ragas_evaluation.py` (đừng đóng terminal)
-- [ ] Report có điểm **V1 và V2**, đủ 4 chỉ số, 50 cặp mỗi bản
-- [ ] **Faithfulness ≥ 0.8** ở ít nhất 1 bản (chưa đạt: kiểm tra `{context}`, giảm `chunk_size`, tăng `k`)
+- [x] Chạy `python 03_ragas_evaluation.py` (đừng đóng terminal)
+- [x] Report có điểm **V1 và V2**, đủ 4 chỉ số, 50 cặp mỗi bản
+- [x] **Faithfulness ≥ 0.8** ở ít nhất 1 bản (chưa đạt: kiểm tra `{context}`, giảm `chunk_size`, tăng `k`)
   > **Tuning policy**: Nếu faithfulness < 0.8 ở lần chạy đầu: thử kiểm tra `{context}` trước; sau đó mới cho phép điều chỉnh `chunk_size`/`k`; ghi lại thay đổi và lý do trong reports/checkpoint-3-*.md
-- [ ] `cp ../data/ragas_report.json ../evidence/03_ragas_report.json`
-- [ ] `python -m json.tool ../evidence/03_ragas_report.json` hợp lệ
-- [ ] 📸 `evidence/03_ragas_scores.png` (bảng V1 vs V2)
+- [x] `cp ../data/ragas_report.json ../evidence/03_ragas_report.json`
+- [x] `python -m json.tool ../evidence/03_ragas_report.json` hợp lệ
+- [x] 📸 `evidence/03_ragas_scores.png` (bảng V1 vs V2)
 
 ## Checkpoint 4 — Guardrails (25đ) · `src/04_guardrails_validator.py`
 > ⚠️ Dùng `FailResult(error_message=..., fix_value=...)` để thay output. `PassResult(value_override=...)` là cách cũ, không còn hiệu lực.
@@ -84,7 +84,7 @@
 - [ ] `cd src && python run_all.py` chạy trọn vẹn không cần sửa tay (+2đ thưởng)
 - [ ] Tổng traces trên LangSmith project **≥ 100** (50 từ bước 1 + 50 từ bước 2)
 - [ ] (Thưởng) `evidence/README.md`: phân tích vì sao V1 hoặc V2 điểm cao hơn (+1đ; thêm +2đ nếu phân tích nằm trong phần bình luận RAGAS)
-- [ ] (Thưởng) Faithfulness ≥ 0.9 ở cả 2 bản (+3đ)
+- [x] (Thưởng) Faithfulness ≥ 0.9 ở cả 2 bản (+3đ)
 - [ ] (Thưởng) Đặt LangSmith project ở chế độ chia sẻ công khai (+1đ)
 - [ ] (Thưởng) Code sạch, có docstring, có xử lý lỗi/fallback (+2đ, +1đ)
 - [ ] Cập nhật README gốc của repo nếu cần (SUBMISSION yêu cầu có `README.md`)
@@ -93,8 +93,8 @@
 - [x] `01_langsmith_traces.png`
 - [x] `02_prompt_hub.png`
 - [x] `02_ab_routing_log.txt`
-- [ ] `03_ragas_scores.png`
-- [ ] `03_ragas_report.json`
+- [x] `03_ragas_scores.png`
+- [x] `03_ragas_report.json`
 - [ ] `04_pii_demo_log.txt`
 - [ ] `04_json_demo_log.txt`
 
