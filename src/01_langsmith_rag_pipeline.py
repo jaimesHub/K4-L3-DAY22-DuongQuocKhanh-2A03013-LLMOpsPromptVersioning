@@ -42,12 +42,10 @@ def setup_vectorstore():
 
 
 # ── 2. RAG Prompt Template ─────────────────────────────────────────────────
-# TODO: Tạo ChatPromptTemplate với 2 messages:
-#   ("system", "Bạn là trợ lý AI hữu ích. Chỉ dùng context sau để trả lời.\n\nContext:\n{context}")
-#   ("human",  "{question}")
-#
-# Gợi ý: RAG_PROMPT = ChatPromptTemplate.from_messages([...])
-RAG_PROMPT = ...
+RAG_PROMPT = ChatPromptTemplate.from_messages([
+    ("system", "Bạn là trợ lý AI hữu ích. Chỉ dùng context sau để trả lời.\n\nContext:\n{context}"),
+    ("human", "{question}"),
+])
 
 
 # ── 3. Build RAG Chain ─────────────────────────────────────────────────────
