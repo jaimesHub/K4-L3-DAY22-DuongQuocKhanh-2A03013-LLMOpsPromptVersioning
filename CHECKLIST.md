@@ -83,7 +83,7 @@
 ## Chạy tổng + chuẩn bị nộp
 - [ ] `cd src && python run_all.py` chạy trọn vẹn không cần sửa tay (+2đ thưởng)
 - [ ] Tổng traces trên LangSmith project **≥ 100** (50 từ bước 1 + 50 từ bước 2)
-- [ ] (Thưởng) `evidence/README.md`: phân tích vì sao V1 hoặc V2 điểm cao hơn (+1đ; thêm +2đ nếu phân tích nằm trong phần bình luận RAGAS)
+- [x] (Thưởng) `evidence/README.md`: phân tích vì sao V1 hoặc V2 điểm cao hơn (+1đ; thêm +2đ nếu phân tích nằm trong phần bình luận RAGAS)
 - [x] (Thưởng) Faithfulness ≥ 0.9 ở cả 2 bản (+3đ)
 - [ ] (Thưởng) Đặt LangSmith project ở chế độ chia sẻ công khai (+1đ)
 - [ ] (Thưởng) Code sạch, có docstring, có xử lý lỗi/fallback (+2đ, +1đ)
