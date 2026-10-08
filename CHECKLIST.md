@@ -16,12 +16,12 @@
 - [x] `python -m venv venv` rồi activate
 - [x] `pip install -r requirements.txt`
 - [x] `pip install "langchain-community<0.4"` (bắt buộc, bản 0.4 làm `import ragas` lỗi)
-- [ ] Đăng ký LangSmith, tạo API key (`lsv2_...`)
-- [ ] `cp .env.example .env`, điền: `LANGCHAIN_TRACING_V2=true`, `LANGCHAIN_API_KEY`, `LANGCHAIN_PROJECT`, `PROVIDER`, key của provider
+- [x] Đăng ký LangSmith, tạo API key (`lsv2_...`)
+- [x] `cp .env.example .env`, điền: `LANGCHAIN_TRACING_V2=true`, `LANGCHAIN_API_KEY`, `LANGCHAIN_PROJECT`, `PROVIDER`, key của provider
   - Anthropic/OpenRouter vẫn cần `OPENAI_API_KEY` cho embeddings
 - [ ] Windows: `export PYTHONUTF8=1` (nếu dùng `tee`)
-- [ ] `cd src && python config.py` in `✅ Config OK`
-- [ ] `git status` không thấy `.env`
+- [x] `cd src && python config.py` in `✅ Config OK`
+- [x] `git status` không thấy `.env`
 
 ---
 
