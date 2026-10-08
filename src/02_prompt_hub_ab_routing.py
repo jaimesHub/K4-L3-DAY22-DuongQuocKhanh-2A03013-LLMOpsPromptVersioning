@@ -148,20 +148,15 @@ def main():
     if not config.validate():
         sys.exit(1)
 
-    # TODO: Tạo LangSmith Client với API key từ config
-    # Gợi ý: client = Client(api_key=config.LANGSMITH_API_KEY)
-    client = ...
+    client = Client(api_key=config.LANGSMITH_API_KEY)
 
-    # TODO: Push cả 2 prompts lên Hub
     push_prompts_to_hub(client)
 
-    # TODO: Pull cả 2 prompts từ Hub (dùng dict trả về)
-    prompts = ...
+    prompts = pull_prompts_from_hub(client)
 
     # Tạo vectorstore, retriever và LLM
     vectorstore = setup_vectorstore()
-    # TODO: Tạo retriever từ vectorstore (k=3)
-    retriever   = ...
+    retriever   = vectorstore.as_retriever(search_kwargs={"k": 3})
     llm         = get_llm()
 
     # Chạy A/B routing cho tất cả câu hỏi
@@ -169,13 +164,11 @@ def main():
     for i, question in enumerate(SAMPLE_QUESTIONS):
         request_id  = f"req-{i:04d}"
 
-        # TODO: Lấy version key từ request_id qua get_prompt_version()
-        version_key = ...
+        version_key = get_prompt_version(request_id)
         version_tag = "v1" if version_key == PROMPT_V1_NAME else "v2"
         prompt      = prompts[version_key]
 
-        # TODO: Gọi ask_ab() với đúng arguments
-        result = ...
+        result = ask_ab(retriever, llm, prompt, question, version_tag)
 
         if version_tag == "v1":
             v1_count += 1
