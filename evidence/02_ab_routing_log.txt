@@ -2,8 +2,8 @@
   Bước 2: Prompt Hub & A/B Routing
 ============================================================
 ✅ Config OK  |  Provider: OPENAI  |  Project: day22-lab
-✅ Đã push V1 → https://smith.langchain.com/prompts/duongquockhanh-rag-prompt-v1/d49550cd?organizationId=7a7bd894-7e2e-4351-a7f8-4c7cfa4a9959
-✅ Đã push V2 → https://smith.langchain.com/prompts/duongquockhanh-rag-prompt-v2/39f1a593?organizationId=7a7bd894-7e2e-4351-a7f8-4c7cfa4a9959
+✅ Đã push V1 → https://smith.langchain.com/prompts/duongquockhanh-rag-prompt-v1/d49550cd?organizationId=<redacted>
+✅ Đã push V2 → https://smith.langchain.com/prompts/duongquockhanh-rag-prompt-v2/39f1a593?organizationId=<redacted>
 ↓ Đã pull 'duongquockhanh-rag-prompt-v1' từ Hub
 ↓ Đã pull 'duongquockhanh-rag-prompt-v2' từ Hub
 🔨 Đang tạo FAISS index từ 107 chunks ...
