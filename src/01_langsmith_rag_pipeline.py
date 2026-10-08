@@ -32,25 +32,12 @@ from qa_pairs import SAMPLE_QUESTIONS
 def setup_vectorstore():
     """
     Tải knowledge base, chia chunks và tạo FAISS vectorstore.
-
-    Gợi ý:
-        embeddings  = get_embeddings()
-        text        = load_knowledge_base()
-        chunks      = split_text(text, chunk_size=500, chunk_overlap=50)
-        vectorstore = build_vectorstore(chunks, embeddings)
     """
-    # TODO: Khởi tạo embeddings từ factory (1 dòng)
-    embeddings = ...
-
-    # TODO: Đọc nội dung knowledge base (1 dòng)
-    text = ...
-
-    # TODO: Chia text thành chunks với chunk_size=500, chunk_overlap=50 (1 dòng)
-    chunks = ...
+    embeddings = get_embeddings()
+    text = load_knowledge_base()
+    chunks = split_text(text, chunk_size=500, chunk_overlap=50)
     print(f"📚 Đã chia thành {len(chunks)} chunks")
-
-    # TODO: Tạo FAISS vectorstore và trả về (1 dòng)
-    vectorstore = ...
+    vectorstore = build_vectorstore(chunks, embeddings)
     return vectorstore
 
 

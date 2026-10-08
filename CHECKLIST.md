@@ -26,7 +26,7 @@
 ---
 
 ## Checkpoint 1 — RAG + LangSmith tracing (25đ) · `src/01_langsmith_rag_pipeline.py`
-- [ ] `setup_vectorstore()` (~l.42–53): `get_embeddings` → `load_knowledge_base` → `split_text(500, 50)` → `build_vectorstore`
+- [x] `setup_vectorstore()` (~l.42–53): `get_embeddings` → `load_knowledge_base` → `split_text(500, 50)` → `build_vectorstore`
 - [ ] `RAG_PROMPT` (~l.58–63): system có `{context}` + human `{question}`
 - [ ] `build_rag_chain()` (~l.79–94): retriever `k=3`, `format_docs`, LCEL chain, **trả về `(chain, retriever)`**
 - [ ] `ask()` (~l.100–108): `@traceable(name="rag-query", tags=["rag","step1"])` **ngay trên `def`**, `chain.invoke(question)`
