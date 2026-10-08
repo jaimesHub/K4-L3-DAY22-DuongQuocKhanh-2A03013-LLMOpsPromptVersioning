@@ -56,7 +56,7 @@
 - [x] `collect_rag_outputs()` (~l.110–119): dùng `qa["question"]`, lấy `answer` và `contexts`
 - [x] `build_ragas_dataset()` (~l.137–148): `SingleTurnSample(user_input, response, retrieved_contexts, reference)` → `EvaluationDataset`
 - [x] `run_ragas_eval()` (~l.161–181): `evaluate(dataset, metrics=[4 chỉ số], llm=llm_eval, embeddings=emb_eval)`
-- [ ] `main()` (~l.208–245): `setup_vectorstore()`, ghi `data/ragas_report.json`
+- [x] `main()` (~l.208–245): `setup_vectorstore()`, ghi `data/ragas_report.json`
 - [ ] Chạy `python 03_ragas_evaluation.py` (đừng đóng terminal)
 - [ ] Report có điểm **V1 và V2**, đủ 4 chỉ số, 50 cặp mỗi bản
 - [ ] **Faithfulness ≥ 0.8** ở ít nhất 1 bản (chưa đạt: kiểm tra `{context}`, giảm `chunk_size`, tăng `k`)
