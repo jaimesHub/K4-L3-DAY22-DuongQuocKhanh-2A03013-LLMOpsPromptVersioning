@@ -37,7 +37,7 @@
 
 ## Checkpoint 2 — Prompt Hub & A/B routing (25đ) · `src/02_prompt_hub_ab_routing.py`
 - [x] Đổi `PROMPT_V1_NAME` / `PROMPT_V2_NAME` thành tên riêng của bạn (~l.31–33), không dùng mặc định `my-rag-prompt-*`
-- [ ] Viết `SYSTEM_V1` (~l.37–42, kết thúc bằng `\n\nContext:\n{context}`) và `SYSTEM_V2` (~l.49–53, cũng kết thúc `{context}`), **bắt buộc có `{context}`**
+- [x] Viết `SYSTEM_V1` (~l.37–42, kết thúc bằng `\n\nContext:\n{context}`) và `SYSTEM_V2` (~l.49–53, cũng kết thúc `{context}`), **bắt buộc có `{context}`**
 - [ ] `push_prompts_to_hub` (~l.69, 76): `client.push_prompt(...)` cho cả 2
 - [ ] `pull_prompts_from_hub` (~l.96, 104): `client.pull_prompt(...)` cho cả 2
 - [ ] `get_prompt_version` (~l.125–129): MD5(`request_id`) % 2, trả về **tên prompt**
