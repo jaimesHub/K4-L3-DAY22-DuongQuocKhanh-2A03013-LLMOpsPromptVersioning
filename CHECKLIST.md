@@ -40,7 +40,7 @@
 - [x] Viết `SYSTEM_V1` (~l.37–42, kết thúc bằng `\n\nContext:\n{context}`) và `SYSTEM_V2` (~l.49–53, cũng kết thúc `{context}`), **bắt buộc có `{context}`**
 - [x] `push_prompts_to_hub` (~l.69, 76): `client.push_prompt(...)` cho cả 2
 - [x] `pull_prompts_from_hub` (~l.96, 104): `client.pull_prompt(...)` cho cả 2
-- [ ] `get_prompt_version` (~l.125–129): MD5(`request_id`) % 2, trả về **tên prompt**
+- [x] `get_prompt_version` (~l.125–129): MD5(`request_id`) % 2, trả về **tên prompt**
 - [ ] `ask_ab()` (~l.133–154): `@traceable(name="ab-rag-query", tags=["ab-test","step2"])`, trả dict `{question, answer, version}`
 - [ ] `main()` (~l.174–201): `Client(api_key=config.LANGSMITH_API_KEY)`, push, pull, retriever `k=3`, gọi `ask_ab`
 - [ ] Chạy: `python 02_prompt_hub_ab_routing.py | tee ../evidence/02_ab_routing_log.txt`

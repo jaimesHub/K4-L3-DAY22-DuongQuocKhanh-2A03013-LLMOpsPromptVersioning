@@ -108,16 +108,9 @@ def get_prompt_version(request_id: str) -> str:
 
     Quy tắc: hash chẵn → PROMPT_V1_NAME | hash lẻ → PROMPT_V2_NAME
     TÍNH CHẤT: cùng request_id LUÔN cho cùng kết quả (deterministic).
-
-    Gợi ý:
-        hash_int = int(hashlib.md5(request_id.encode()).hexdigest(), 16)
-        return PROMPT_V1_NAME if hash_int % 2 == 0 else PROMPT_V2_NAME
     """
-    # TODO: Tính MD5 hash của request_id và chuyển thành số nguyên
-    hash_int = ...
-
-    # TODO: Trả về PROMPT_V1_NAME nếu chẵn, PROMPT_V2_NAME nếu lẻ
-    ...
+    hash_int = int(hashlib.md5(request_id.encode()).hexdigest(), 16)
+    return PROMPT_V1_NAME if hash_int % 2 == 0 else PROMPT_V2_NAME
 
 
 # ── 6. Traced A/B Query ────────────────────────────────────────────────────
