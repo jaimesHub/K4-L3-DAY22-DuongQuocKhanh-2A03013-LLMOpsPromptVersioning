@@ -168,9 +168,8 @@ def demo_pii_guard():
     print("  Demo: PII Detection & Redaction")
     print("=" * 55)
 
-    # TODO: Tạo Guard với PIIDetector, truyền on_fail=OnFailAction.FIX vào CONSTRUCTOR
-    # Gợi ý: guard = Guard().use(PIIDetector(on_fail=OnFailAction.FIX))
-    guard = Guard().use(PIIDetector(...))
+    # on_fail truyền vào CONSTRUCTOR của validator, không phải Guard.use()
+    guard = Guard().use(PIIDetector(on_fail=OnFailAction.FIX))
 
     test_cases = [
         ("Email",        "Contact John at john.doe@example.com for details."),
