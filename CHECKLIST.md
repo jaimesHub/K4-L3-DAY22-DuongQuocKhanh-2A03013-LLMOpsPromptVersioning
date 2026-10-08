@@ -43,12 +43,12 @@
 - [x] `get_prompt_version` (~l.125–129): MD5(`request_id`) % 2, trả về **tên prompt**
 - [x] `ask_ab()` (~l.133–154): `@traceable(name="ab-rag-query", tags=["ab-test","step2"])`, trả dict `{question, answer, version}`
 - [x] `main()` (~l.174–201): `Client(api_key=config.LANGSMITH_API_KEY)`, push, pull, retriever `k=3`, gọi `ask_ab`
-- [ ] Chạy: `python 02_prompt_hub_ab_routing.py | tee ../evidence/02_ab_routing_log.txt`
-- [ ] Log có `↓ Đã pull ... từ Hub` cho **cả 2** prompt (không rơi vào fallback local)
-- [ ] Log có cả nhãn `[prompt-v1]` và `[prompt-v2]`
-- [ ] Chạy lại: cùng `request_id` → cùng phiên bản (lỗi `409 Nothing to commit` là bình thường)
-- [ ] 📸 `evidence/02_prompt_hub.png` (2 prompt trên Prompt Hub)
-- [ ] 📄 `evidence/02_ab_routing_log.txt`
+- [x] Chạy: `python 02_prompt_hub_ab_routing.py | tee ../evidence/02_ab_routing_log.txt`
+- [x] Log có `↓ Đã pull ... từ Hub` cho **cả 2** prompt (không rơi vào fallback local)
+- [x] Log có cả nhãn `[prompt-v1]` và `[prompt-v2]`
+- [x] Chạy lại: cùng `request_id` → cùng phiên bản (lỗi `409 Nothing to commit` là bình thường)
+- [x] 📸 `evidence/02_prompt_hub.png` (2 prompt trên Prompt Hub)
+- [x] 📄 `evidence/02_ab_routing_log.txt`
 
 ## Checkpoint 3 — RAGAS (25đ) · `src/03_ragas_evaluation.py` ⏱ 15–30 phút, bắt đầu sớm
 - [ ] Copy `SYSTEM_V1`/`SYSTEM_V2` **giống hệt** bước 2 (~l.40–42, 49–52), **bắt buộc có `{context}`**, không thì faithfulness rất thấp
@@ -90,8 +90,8 @@
 
 ### 7 file evidence bắt buộc
 - [x] `01_langsmith_traces.png`
-- [ ] `02_prompt_hub.png`
-- [ ] `02_ab_routing_log.txt`
+- [x] `02_prompt_hub.png`
+- [x] `02_ab_routing_log.txt`
 - [ ] `03_ragas_scores.png`
 - [ ] `03_ragas_report.json`
 - [ ] `04_pii_demo_log.txt`
