@@ -114,7 +114,7 @@ def get_prompt_version(request_id: str) -> str:
 
 
 # ── 6. Traced A/B Query ────────────────────────────────────────────────────
-# TODO: Thêm @traceable(name="ab-rag-query", tags=["ab-test", "step2"])
+@traceable(name="ab-rag-query", tags=["ab-test", "step2"])
 def ask_ab(retriever, llm, prompt, question: str, version: str) -> dict:
     """
     Chạy RAG chain với prompt version được chọn bởi router.
@@ -125,17 +125,10 @@ def ask_ab(retriever, llm, prompt, question: str, version: str) -> dict:
       c) Chạy (prompt | llm | StrOutputParser()).invoke({"context": ..., "question": ...})
       d) Trả về {"question": ..., "answer": ..., "version": ...}
     """
-    # TODO: Retrieve docs từ retriever
-    docs = ...
-
-    # TODO: Ghép page_content thành 1 string (dùng "\n\n".join)
-    context = ...
-
-    # TODO: Chạy chain và lấy answer
-    answer = (prompt | llm | StrOutputParser()).invoke(...)
-
-    # TODO: Trả về dict kết quả
-    return ...
+    docs = retriever.invoke(question)
+    context = "\n\n".join(d.page_content for d in docs)
+    answer = (prompt | llm | StrOutputParser()).invoke({"context": context, "question": question})
+    return {"question": question, "answer": answer, "version": version}
 
 
 # ── 7. Setup Vectorstore (tái sử dụng logic Bước 1) ───────────────────────
