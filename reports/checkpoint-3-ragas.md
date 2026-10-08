@@ -120,8 +120,8 @@ def run_ragas_eval(dataset):
     
     return result
 ```
-- Evaluator LLM: Claude 3.5 Sonnet
-- Evaluator embeddings: all-MiniLM-L6-v2
+- Evaluator LLM: OpenAI (gpt-4o-mini)
+- Evaluator embeddings: OpenAI (text-embedding-3-small)
 - 4 metrics: faithfulness, answer_relevancy, context_recall, context_precision
 
 ### 6. Fix NaN scores with `np.nanmean()` — Commit: **8f336aa**
@@ -222,7 +222,7 @@ def main():
 **Ước tính**: ~12 phút (theo quan sát user)
 - 50 QA pairs × 2 prompts = 100 LLM calls (run_rag)
 - 100 RAGAS evaluations × 4 metrics = 400 evaluator LLM calls
-- Evaluator LLM (Claude Sonnet) + embeddings → tổng ~12 phút
+- Evaluator LLM (OpenAI, model gpt-4o-mini) + embeddings (text-embedding-3-small) → tổng ~12 phút
 
 ### Output File Validation
 ```bash
@@ -345,7 +345,7 @@ Insight: Prompt style ảnh hưởng đến answer_relevancy + faithfulness,
 
 ### 4. LLM Evaluator vs Ground Truth
 ```python
-# Dùng LLM (Claude Sonnet) để evaluate:
+# Dùng LLM (OpenAI gpt-4o-mini) để evaluate:
 faithfulness = evaluate_with_llm("Câu trả lời có match context không?")
 answer_relevancy = evaluate_with_llm("Câu trả lời có answer question không?")
 
