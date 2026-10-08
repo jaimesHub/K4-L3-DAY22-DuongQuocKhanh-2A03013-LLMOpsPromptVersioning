@@ -92,15 +92,11 @@ def main():
     if not config.validate():
         sys.exit(1)
 
-    # TODO: Gọi setup_vectorstore() để tạo vectorstore
-    vectorstore = ...
+    vectorstore = setup_vectorstore()
+    chain, retriever = build_rag_chain(vectorstore)
 
-    # TODO: Gọi build_rag_chain(vectorstore) để nhận chain và retriever
-    chain, retriever = ...
-
-    # TODO: Lặp qua tất cả SAMPLE_QUESTIONS, gọi ask(), in câu hỏi và câu trả lời
     for i, question in enumerate(SAMPLE_QUESTIONS, 1):
-        answer = ...
+        answer = ask(chain, question)
         print(f"[{i:02d}/{len(SAMPLE_QUESTIONS)}] Q: {question[:60]}")
         print(f"       A: {str(answer)[:100]}\n")
 

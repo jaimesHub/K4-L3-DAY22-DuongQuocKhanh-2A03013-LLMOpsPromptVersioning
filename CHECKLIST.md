@@ -30,7 +30,7 @@
 - [x] `RAG_PROMPT` (~l.58–63): system có `{context}` + human `{question}`
 - [x] `build_rag_chain()` (~l.79–94): retriever `k=3`, `format_docs`, LCEL chain, **trả về `(chain, retriever)`**
 - [x] `ask()` (~l.100–108): `@traceable(name="rag-query", tags=["rag","step1"])` **ngay trên `def`**, `chain.invoke(question)`
-- [ ] `main()` (~l.120–130): gọi `setup_vectorstore`, `build_rag_chain`, lặp 50 câu hỏi
+- [x] `main()` (~l.120–130): gọi `setup_vectorstore`, `build_rag_chain`, lặp 50 câu hỏi
 - [ ] Chạy `python 01_langsmith_rag_pipeline.py` (~2 phút), không lỗi, đủ 50 Q/A
 - [ ] Dashboard LangSmith có **≥ 50 traces** `rag-query`; mở 1 trace thấy câu hỏi + 3 context + câu trả lời
 - [ ] 📸 `evidence/01_langsmith_traces.png` (che key/email)
