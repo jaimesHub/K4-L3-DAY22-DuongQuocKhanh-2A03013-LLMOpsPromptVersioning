@@ -73,10 +73,10 @@
 - [x] `JSONFormatter.validate()` (~l.148–166): hợp lệ → `PassResult()`; sửa được → `FailResult(error_message=..., fix_value=json.dumps(parsed, indent=2))`; không sửa được → `FailResult` với JSON dự phòng `{"error": ...}`
 - [x] Tạo Guard (~l.177, 205): `Guard().use(PIIDetector(on_fail=OnFailAction.FIX))` — **`on_fail` trong constructor**, không phải `Guard.use()`
 - [x] `guard.validate(text)` (~l.190, 217)
-- [ ] Chạy: `python 04_guardrails_validator.py | tee ../evidence/04_pii_demo_log.txt ../evidence/04_json_demo_log.txt`
-- [ ] PII: ≥ 5 test case; `Output:` chứa `[EMAIL_REDACTED]`, `[PHONE_REDACTED]`, `[SSN_REDACTED]`, `[CREDIT_CARD_REDACTED]`; case sạch giữ nguyên; Output ≠ Input
-- [ ] JSON: ≥ 4 test case (hợp lệ, fences, nháy đơn, hỏng hoàn toàn)
-- [ ] 📄 `evidence/04_pii_demo_log.txt`, `evidence/04_json_demo_log.txt`
+- [x] Chạy: `python 04_guardrails_validator.py | tee ../evidence/04_pii_demo_log.txt ../evidence/04_json_demo_log.txt`
+- [x] PII: ≥ 5 test case; `Output:` chứa `[EMAIL_REDACTED]`, `[PHONE_REDACTED]`, `[SSN_REDACTED]`, `[CREDIT_CARD_REDACTED]`; case sạch giữ nguyên; Output ≠ Input
+- [x] JSON: ≥ 4 test case (hợp lệ, fences, nháy đơn, hỏng hoàn toàn)
+- [x] 📄 `evidence/04_pii_demo_log.txt`, `evidence/04_json_demo_log.txt`
 
 ---
 
@@ -95,8 +95,8 @@
 - [x] `02_ab_routing_log.txt`
 - [x] `03_ragas_scores.png`
 - [x] `03_ragas_report.json`
-- [ ] `04_pii_demo_log.txt`
-- [ ] `04_json_demo_log.txt`
+- [x] `04_pii_demo_log.txt`
+- [x] `04_json_demo_log.txt`
 
 ### Kiểm tra trước khi nộp (copy từ SUBMISSION.md)
 ```bash
