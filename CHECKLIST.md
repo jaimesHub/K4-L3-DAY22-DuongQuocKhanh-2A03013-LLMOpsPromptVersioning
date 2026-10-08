@@ -81,8 +81,8 @@
 ---
 
 ## Chạy tổng + chuẩn bị nộp
-- [ ] `cd src && python run_all.py` chạy trọn vẹn không cần sửa tay (+2đ thưởng)
-- [ ] Tổng traces trên LangSmith project **≥ 100** (50 từ bước 1 + 50 từ bước 2)
+- [x] `cd src && python run_all.py` chạy trọn vẹn không cần sửa tay (+2đ thưởng) — cả 4 bước PASS, exit code 0
+- [x] Tổng traces trên LangSmith project **≥ 100** (50 từ bước 1 + 50 từ bước 2)
 - [x] (Thưởng) `evidence/README.md`: phân tích vì sao V1 hoặc V2 điểm cao hơn (+1đ; thêm +2đ nếu phân tích nằm trong phần bình luận RAGAS)
 - [x] (Thưởng) Faithfulness ≥ 0.9 ở cả 2 bản (+3đ)
 - [ ] (Thưởng) Đặt LangSmith project ở chế độ chia sẻ công khai (+1đ)
@@ -110,10 +110,10 @@ python -m json.tool evidence/03_ragas_report.json > /dev/null && echo "OK: JSON 
 ```
 
 ### Nộp bài
-- [ ] Tạo repo **public** tên `K4-L3-DAY22-HoVaTen-MSSV-LLMOpsPromptVersioning` (không dấu, không khoảng trắng)
-- [ ] Push lên GitHub (commit cuối **trước 23:59 08/10/2026**, không force-push)
-- [ ] Mở repo bằng cửa sổ ẩn danh: public, thấy đủ file
-- [ ] Nộp qua LMS: (1) URL GitHub repo, (2) URL LangSmith project
+- [x] Tạo repo **public** tên `K4-L3-DAY22-HoVaTen-MSSV-LLMOpsPromptVersioning` (không dấu, không khoảng trắng) — repo `K4-L3-DAY22-DuongQuocKhanh-2A03013-LLMOpsPromptVersioning` đã có, tên đúng quy ước
+- [x] Push lên GitHub (commit cuối **trước 23:59 08/10/2026**, không force-push) — đã push `cc96bbf` lên `origin/main`
+- [x] Mở repo bằng cửa sổ ẩn danh: public, thấy đủ file
+- [x] Nộp qua LMS: (1) URL GitHub repo, (2) URL LangSmith project
 
 ---
 
