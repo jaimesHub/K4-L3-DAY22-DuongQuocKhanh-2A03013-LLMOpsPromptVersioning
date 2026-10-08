@@ -123,11 +123,11 @@ class JSONFormatter(Validator):
         text = re.sub(r'\s*```$',          '', text)
         text = text.strip()
 
-        # TODO: Thay single quotes → double quotes
-        text = ...   # text.replace("'", '"')
+        # Thay single quotes → double quotes
+        text = text.replace("'", '"')
 
-        # TODO: Xóa trailing commas (dùng re.sub với r',\s*([}\]])' → r'\1')
-        text = ...   # re.sub(r',\s*([}\]])', r'\1', text)
+        # Xóa trailing commas trước } hoặc ]
+        text = re.sub(r',\s*([}\]])', r'\1', text)
 
         return text
 

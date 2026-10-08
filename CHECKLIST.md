@@ -69,7 +69,7 @@
 > ⚠️ Dùng `FailResult(error_message=..., fix_value=...)` để thay output. `PassResult(value_override=...)` là cách cũ, không còn hiệu lực.
 - [x] `PIIDetector.validate()` (~l.78–94): duyệt `PII_PATTERNS` bằng regex, thay bằng `[TYPE_REDACTED]`; có PII → `FailResult(error_message=..., fix_value=...)`, sạch → `PassResult()`
 - [x] `@register_validator` có sẵn trên cả 2 validator (không dùng validator từ Hub)
-- [ ] `JSONFormatter._repair()` (~l.129–133): nháy đơn → nháy đôi, xóa dấu phẩy thừa (đã có sẵn gỡ fences)
+- [x] `JSONFormatter._repair()` (~l.129–133): nháy đơn → nháy đôi, xóa dấu phẩy thừa (đã có sẵn gỡ fences)
 - [ ] `JSONFormatter.validate()` (~l.148–166): hợp lệ → `PassResult()`; sửa được → `FailResult(error_message=..., fix_value=json.dumps(parsed, indent=2))`; không sửa được → `FailResult` với JSON dự phòng `{"error": ...}`
 - [ ] Tạo Guard (~l.177, 205): `Guard().use(PIIDetector(on_fail=OnFailAction.FIX))` — **`on_fail` trong constructor**, không phải `Guard.use()`
 - [ ] `guard.validate(text)` (~l.190, 217)
