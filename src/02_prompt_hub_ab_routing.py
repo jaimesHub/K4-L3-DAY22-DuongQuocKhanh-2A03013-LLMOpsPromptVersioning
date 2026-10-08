@@ -28,9 +28,8 @@ from qa_pairs import SAMPLE_QUESTIONS
 
 
 # ── 1. Tên Prompt trên Hub ─────────────────────────────────────────────────
-# TODO: Đổi thành tên của bạn — phải là duy nhất trong Hub của bạn
-PROMPT_V1_NAME = "my-rag-prompt-v1"   # ví dụ: "nguyen-rag-v1"
-PROMPT_V2_NAME = "my-rag-prompt-v2"   # ví dụ: "nguyen-rag-v2"
+PROMPT_V1_NAME = "duongquockhanh-rag-prompt-v1"
+PROMPT_V2_NAME = "duongquockhanh-rag-prompt-v2"
 
 
 # ── 2. Định nghĩa 2 Prompt Templates ──────────────────────────────────────
