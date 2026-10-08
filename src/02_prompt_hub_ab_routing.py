@@ -60,18 +60,15 @@ PROMPT_V2 = ChatPromptTemplate.from_messages([
 def push_prompts_to_hub(client: Client):
     """
     Upload cả 2 prompt templates lên LangSmith Prompt Hub.
-    Gợi ý: client.push_prompt(name, object=template, description="...")
     """
-    # TODO: Push PROMPT_V1 — bọc trong try/except để xử lý lỗi
     try:
-        url = ...   # client.push_prompt(PROMPT_V1_NAME, object=PROMPT_V1, description="V1 – ngắn gọn")
+        url = client.push_prompt(PROMPT_V1_NAME, object=PROMPT_V1, description="V1 – ngắn gọn")
         print(f"✅ Đã push V1 → {url}")
     except Exception as e:
         print(f"⚠️  V1 lỗi: {e}")
 
-    # TODO: Push PROMPT_V2 — bọc trong try/except
     try:
-        url = ...   # client.push_prompt(PROMPT_V2_NAME, object=PROMPT_V2, description="V2 – có cấu trúc")
+        url = client.push_prompt(PROMPT_V2_NAME, object=PROMPT_V2, description="V2 – có cấu trúc")
         print(f"✅ Đã push V2 → {url}")
     except Exception as e:
         print(f"⚠️  V2 lỗi: {e}")
