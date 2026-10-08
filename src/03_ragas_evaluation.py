@@ -168,12 +168,13 @@ def run_ragas_eval(rag_results: list, version: str) -> dict:
         embeddings=emb_eval,
     )
 
-    # Tính mean score cho mỗi metric
-    # result["faithfulness"] trả về list of floats → dùng np.mean()
+    # Tính mean score cho mỗi metric, bỏ qua None và NaN
+    # result["faithfulness"] trả về list of floats → dùng np.nanmean()
     scores = {}
     for key in ["faithfulness", "answer_relevancy", "context_recall", "context_precision"]:
         raw = result[key]
-        scores[key] = float(np.mean([v for v in raw if v is not None]))
+        values = [v for v in raw if v is not None]
+        scores[key] = float(np.nanmean(values))
 
     # In kết quả
     print(f"\n📊 Kết quả RAGAS — Prompt {version.upper()}:")
