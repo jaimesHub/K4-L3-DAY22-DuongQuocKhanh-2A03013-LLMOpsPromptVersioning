@@ -60,6 +60,7 @@
 - [ ] Chạy `python 03_ragas_evaluation.py` (đừng đóng terminal)
 - [ ] Report có điểm **V1 và V2**, đủ 4 chỉ số, 50 cặp mỗi bản
 - [ ] **Faithfulness ≥ 0.8** ở ít nhất 1 bản (chưa đạt: kiểm tra `{context}`, giảm `chunk_size`, tăng `k`)
+  > **Tuning policy**: Nếu faithfulness < 0.8 ở lần chạy đầu: thử kiểm tra `{context}` trước; sau đó mới cho phép điều chỉnh `chunk_size`/`k`; ghi lại thay đổi và lý do trong reports/checkpoint-3-*.md
 - [ ] `cp ../data/ragas_report.json ../evidence/03_ragas_report.json`
 - [ ] `python -m json.tool ../evidence/03_ragas_report.json` hợp lệ
 - [ ] 📸 `evidence/03_ragas_scores.png` (bảng V1 vs V2)
