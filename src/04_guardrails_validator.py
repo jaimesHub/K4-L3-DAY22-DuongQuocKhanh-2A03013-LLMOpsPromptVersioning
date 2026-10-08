@@ -181,8 +181,7 @@ def demo_pii_guard():
     ]
 
     for label, text in test_cases:
-        # TODO: Gọi guard.validate(text) để lấy ValidationOutcome
-        result = ...
+        result = guard.validate(text)
 
         print(f"\n[{label}]")
         print(f"  Input:  {text}")
