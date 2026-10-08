@@ -54,7 +54,7 @@
 - [x] Copy `SYSTEM_V1`/`SYSTEM_V2` **giống hệt** bước 2 (~l.40–42, 49–52), **bắt buộc có `{context}`**, không thì faithfulness rất thấp
 - [x] `run_rag()` (~l.77–94): `contexts` là `list[str]` (**không ghép chuỗi**), `ctx_str` chỉ để đưa vào prompt; trả `{answer, contexts}`
 - [x] `collect_rag_outputs()` (~l.110–119): dùng `qa["question"]`, lấy `answer` và `contexts`
-- [ ] `build_ragas_dataset()` (~l.137–148): `SingleTurnSample(user_input, response, retrieved_contexts, reference)` → `EvaluationDataset`
+- [x] `build_ragas_dataset()` (~l.137–148): `SingleTurnSample(user_input, response, retrieved_contexts, reference)` → `EvaluationDataset`
 - [ ] `run_ragas_eval()` (~l.161–181): `evaluate(dataset, metrics=[4 chỉ số], llm=llm_eval, embeddings=emb_eval)`
 - [ ] `main()` (~l.208–245): `setup_vectorstore()`, ghi `data/ragas_report.json`
 - [ ] Chạy `python 03_ragas_evaluation.py` (đừng đóng terminal)
