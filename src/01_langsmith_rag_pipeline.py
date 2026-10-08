@@ -60,23 +60,15 @@ def build_rag_chain(vectorstore):
     Trả về: (chain, retriever)
     """
     llm = get_llm()
+    retriever = vectorstore.as_retriever(search_kwargs={"k": 3})
 
-    # TODO: Tạo retriever từ vectorstore, lấy k=3 tài liệu gần nhất
-    # Gợi ý: retriever = vectorstore.as_retriever(search_kwargs={"k": 3})
-    retriever = ...
-
-    # TODO: Định nghĩa hàm format_docs để ghép page_content của các docs thành 1 chuỗi
-    # Gợi ý: "\n\n".join(doc.page_content for doc in docs)
     def format_docs(docs):
-        ...
+        return "\n\n".join(doc.page_content for doc in docs)
 
-    # TODO: Xây dựng LCEL chain dùng pipe operator (|)
-    # Gợi ý:
-    #   chain = (
-    #       {"context": retriever | format_docs, "question": RunnablePassthrough()}
-    #       | RAG_PROMPT | llm | StrOutputParser()
-    #   )
-    chain = ...
+    chain = (
+        {"context": retriever | format_docs, "question": RunnablePassthrough()}
+        | RAG_PROMPT | llm | StrOutputParser()
+    )
 
     return chain, retriever
 
