@@ -108,15 +108,13 @@ def collect_rag_outputs(vectorstore, prompt_version: str) -> list:
     print(f"\n🚀 Đang chạy 50 câu hỏi với prompt {prompt_version} ...")
 
     for i, qa in enumerate(QA_PAIRS, 1):
-        # TODO: Gọi run_rag() cho câu hỏi hiện tại
-        out = ...
+        out = run_rag(retriever, llm, prompt, qa["question"])
 
-        # TODO: Append vào results dict với 4 keys
         results.append({
             "question":  qa["question"],
             "reference": qa["reference"],
-            "answer":    ...,        # out["answer"]
-            "contexts":  ...,        # out["contexts"] — phải là list[str] !
+            "answer":    out["answer"],
+            "contexts":  out["contexts"],
         })
         print(f"  [{i:02d}/50] {qa['question'][:60]}")
 
