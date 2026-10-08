@@ -31,9 +31,9 @@
 - [x] `build_rag_chain()` (~l.79–94): retriever `k=3`, `format_docs`, LCEL chain, **trả về `(chain, retriever)`**
 - [x] `ask()` (~l.100–108): `@traceable(name="rag-query", tags=["rag","step1"])` **ngay trên `def`**, `chain.invoke(question)`
 - [x] `main()` (~l.120–130): gọi `setup_vectorstore`, `build_rag_chain`, lặp 50 câu hỏi
-- [ ] Chạy `python 01_langsmith_rag_pipeline.py` (~2 phút), không lỗi, đủ 50 Q/A
-- [ ] Dashboard LangSmith có **≥ 50 traces** `rag-query`; mở 1 trace thấy câu hỏi + 3 context + câu trả lời
-- [ ] 📸 `evidence/01_langsmith_traces.png` (che key/email)
+- [x] Chạy `python 01_langsmith_rag_pipeline.py` (~2 phút), không lỗi, đủ 50 Q/A
+- [x] Dashboard LangSmith có **≥ 50 traces** `rag-query`; mở 1 trace thấy câu hỏi + 3 context + câu trả lời
+- [x] 📸 `evidence/01_langsmith_traces.png` (che key/email)
 
 ## Checkpoint 2 — Prompt Hub & A/B routing (25đ) · `src/02_prompt_hub_ab_routing.py`
 - [ ] Đổi `PROMPT_V1_NAME` / `PROMPT_V2_NAME` thành tên riêng của bạn (~l.31–33), không dùng mặc định `my-rag-prompt-*`
@@ -89,7 +89,7 @@
 - [ ] Cập nhật README gốc của repo nếu cần (SUBMISSION yêu cầu có `README.md`)
 
 ### 7 file evidence bắt buộc
-- [ ] `01_langsmith_traces.png`
+- [x] `01_langsmith_traces.png`
 - [ ] `02_prompt_hub.png`
 - [ ] `02_ab_routing_log.txt`
 - [ ] `03_ragas_scores.png`
