@@ -72,7 +72,7 @@
 - [x] `JSONFormatter._repair()` (~l.129–133): nháy đơn → nháy đôi, xóa dấu phẩy thừa (đã có sẵn gỡ fences)
 - [x] `JSONFormatter.validate()` (~l.148–166): hợp lệ → `PassResult()`; sửa được → `FailResult(error_message=..., fix_value=json.dumps(parsed, indent=2))`; không sửa được → `FailResult` với JSON dự phòng `{"error": ...}`
 - [x] Tạo Guard (~l.177, 205): `Guard().use(PIIDetector(on_fail=OnFailAction.FIX))` — **`on_fail` trong constructor**, không phải `Guard.use()`
-- [ ] `guard.validate(text)` (~l.190, 217)
+- [x] `guard.validate(text)` (~l.190, 217)
 - [ ] Chạy: `python 04_guardrails_validator.py | tee ../evidence/04_pii_demo_log.txt ../evidence/04_json_demo_log.txt`
 - [ ] PII: ≥ 5 test case; `Output:` chứa `[EMAIL_REDACTED]`, `[PHONE_REDACTED]`, `[SSN_REDACTED]`, `[CREDIT_CARD_REDACTED]`; case sạch giữ nguyên; Output ≠ Input
 - [ ] JSON: ≥ 4 test case (hợp lệ, fences, nháy đơn, hỏng hoàn toàn)
